@@ -40,3 +40,15 @@
   margin: 10px;
   padding:10px;
 }
+
+.user-container{
+  border: 2px solid green;
+}
+
+.pet-container{
+  border: 2px solid blue;
+}
+
+.adoption-container{
+  border: 2px solid purple;
+}
