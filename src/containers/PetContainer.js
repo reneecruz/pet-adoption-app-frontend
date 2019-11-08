@@ -5,7 +5,8 @@ import PetViewer from '../components/PetViewer'
 class PetContainer extends Component {
  state = {
    pets: [],
-   pet: {}
+   pet: {},
+   onOff: false
  }
  
  componentDidMount(){
@@ -20,21 +21,35 @@ class PetContainer extends Component {
  }
 
  handleClick = (petItem) => {
-   console.log("click", petItem)
+  //  console.log("click", petItem)
    this.setState({
-     pet: petItem
+     pet: petItem,
+     onOff: true
    })
+ }
+
+ handleRemove = ()=>{
+  this.setState({
+    pet: {},
+    onOff: false
+  })
  }
   
  
 
  render() {
- 
+  // console.log(this.state.onOff)
   return(
    <div className="pet-container">
-       Pet Container
-       <PetList pets={this.state.pets} handleClick={this.handleClick} />
-       <PetViewer pet={this.state.pet}/>
+       Pet Container 
+       {
+         !this.state.onOff ? 
+         <PetList pets={this.state.pets} handleClick={this.handleClick} /> :
+
+         <PetViewer  pet={this.state.pet} handleClick={this.handleRemove }/>
+       }
+       
+       
    </div>
     )
    }
