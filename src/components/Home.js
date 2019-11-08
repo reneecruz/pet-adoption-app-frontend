@@ -1,9 +1,13 @@
 import React from 'react';
+import LogIn from './LogIn'
 
 class Home extends React.Component {
     render() {
         return(
-            <div>Home</div>
+            <div className="home">
+                <LogIn/>
+            </div>
+
         )
     }
 }

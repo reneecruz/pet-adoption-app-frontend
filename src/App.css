@@ -20,3 +20,23 @@
 .App-link {
   color: #09d3ac;
 }
+
+.header{
+  border: 2px solid black;
+  height: 25vh;
+  margin: 10px 5px;
+}
+
+.home{
+  border: 2px solid red;
+  height: 70vh;
+  margin: 10px 5px;
+}
+
+.nav-link{
+  width: 100px;
+  display: inline-block;
+  border: 2px solid black;
+  margin: 10px;
+  padding:10px;
+}

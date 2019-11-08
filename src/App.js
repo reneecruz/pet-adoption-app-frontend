@@ -3,7 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import { Route, Switch, NavLink, Redirect } from 'react-router-dom';
 import Home from './components/Home';
-import LogIn from './components/LogIn';
+import SignIn from './components/SignIn';
+import SignUp from './components/SignUp';
 
 function App() {
 
@@ -11,15 +12,17 @@ function App() {
   return (
     <div className="App">
 
-      <header>
-        <NavLink to='/'>Home</NavLink>
-        <NavLink to='/login'>Log In</NavLink>
+      <header className="header">
+        <NavLink className="nav-link" to='/'>Home</NavLink>
+        <NavLink className="nav-link"to='/signin'>Sign In</NavLink>
+        <NavLink className="nav-link"to='/signup'>Sign Up</NavLink>
 
       </header>
     
     <Switch>
       <Route exact path={'/'} component={Home} />
-      <Route path={'/login'} component={LogIn} />
+      <Route path={'/signin'} component={SignIn} />
+      <Route path={'/signup'} component={SignUp}/>
     </Switch>
     </div>
   );
