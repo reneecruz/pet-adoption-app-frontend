@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import PetItem from './PetItem'
+import PetCard from './PetCard'
 
 class PetViewer extends Component {
   
@@ -8,8 +8,8 @@ class PetViewer extends Component {
    console.log(this.props.pet)
   return(
    <div>
-       pet PetViewer
-    <PetItem pet={this.props.pet} handleClick={null}/>
+     <button>Back</button>
+    <PetCard pet={this.props.pet} handleClick={this.props.handleClick}/>
    </div>
     )
    }
