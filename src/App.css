@@ -29,7 +29,7 @@
 
 .home{
   border: 2px solid red;
-  height: 70vh;
+  height: 700vh;
   margin: 10px 5px;
 }
 
@@ -54,5 +54,19 @@
 }
 
 .dog-img{
-  width: 25%;
+  margin: 10px;
+  height: 40vh;
+  width: 100%;
+}
+
+
+
+.dog-item{
+ width: 30%;
+ float: left;
+ margin: 10px;
+}
+
+.clear{
+  clear: both;
 }
