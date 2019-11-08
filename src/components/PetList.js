@@ -7,7 +7,6 @@ class PetList extends Component {
   //  console.log(this.props.pets)
   return(
    <div>
-      
        {
          this.props.pets.map(pet => {
            return <PetItem pet={pet} key={pet.id}/>

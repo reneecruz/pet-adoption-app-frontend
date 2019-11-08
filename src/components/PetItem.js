@@ -19,10 +19,14 @@ class PetItem extends Component {
    const {name, age, breed, location} = this.props.pet
   //  console.log(this.props.pet)
   return(
-   <div> 
- 
+   <div className="dog-item-container"> 
+     <div className="dog-item">
      <img className="dog-img" src={this.state.imgUrl} alt={name}/>
      <h2>{name} </h2>
+     <div className="clear"></div>
+     </div>
+     
+     
    </div>
     )
    }
