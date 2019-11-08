@@ -2,12 +2,18 @@ import React, { Component } from 'react'
 import PetItem from './PetItem'
 
 class PetList extends Component {
- state = {}
+  
  render() {
+  //  console.log(this.props.pets)
   return(
    <div>
-       Pet List
-       <PetItem/>
+      
+       {
+         this.props.pets.map(pet => {
+           return <PetItem pet={pet} key={pet.id}/>
+         })
+       }
+       
    </div>
     )
    }
