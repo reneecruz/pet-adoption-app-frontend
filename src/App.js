@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Route, Switch, NavLink, Redirect } from 'react-router-dom';
-import Home from './components/Home';
+import HomeContainer from './containers/HomeContainer';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 
@@ -20,7 +20,7 @@ function App() {
       </header>
     
     <Switch>
-      <Route exact path={'/'} component={Home} />
+      <Route exact path={'/'} component={HomeContainer} />
       <Route path={'/signin'} component={SignIn} />
       <Route path={'/signup'} component={SignUp}/>
     </Switch>

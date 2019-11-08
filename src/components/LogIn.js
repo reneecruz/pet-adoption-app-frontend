@@ -7,8 +7,9 @@ class LogIn extends React.Component {
         return(
             <div>
             
-            <SignUp />
-            <SignIn />
+               <SignUp />
+               <SignIn />
+               
             </div>
             
         )

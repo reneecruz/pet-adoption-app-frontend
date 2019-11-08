@@ -1,11 +1,14 @@
 import React from 'react';
-import LogIn from './LogIn'
+import LogIn from '../components/LogIn'
+import PetContainer from './PetContainer'
 
 class Home extends React.Component {
     render() {
         return(
             <div className="home">
-                <LogIn/>
+                {/* <LogIn/> */}
+                <PetContainer/>
+
             </div>
 
         )
