@@ -12,7 +12,10 @@ function App() {
   return (
     <div className="App">
 
-      <header className="header">
+      <header className="header"> 
+        <h1>
+          DoggyDoption
+        </h1>
         <NavLink className="nav-link" to='/'>Home</NavLink>
         <NavLink className="nav-link"to='/signin'>Sign In</NavLink>
         <NavLink className="nav-link"to='/signup'>Sign Up</NavLink>
