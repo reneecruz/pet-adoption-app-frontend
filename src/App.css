@@ -47,12 +47,17 @@
 }
 
 .pet-container{
-  /* border: 2px solid blue; */
+  border: 1px solid black;
+  padding-left: 5%;
+  height: 100%;
+  overflow: auto;
 }
+
 
 .adoption-container{
   /* border: 2px solid purple; */
 }
+ 
 
 .dog-img{
   margin: 0 auto;
@@ -74,7 +79,7 @@
 .dog-item{
  width: 30%;
  float: left;
- margin: 20px;
+ margin: 40px;
  box-shadow: 3px 3px 5px 6px #ccc;
  border-radius: 15px;
 }
