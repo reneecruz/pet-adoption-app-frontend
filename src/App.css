@@ -55,10 +55,18 @@
 }
 
 .dog-img{
-  margin: 10px;
+  margin: 0 auto;
   height: 60vh;
-  width: 90%;
-  border-radius: 15px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0 ;
+  
+  
+}
+
+.dog-img-div{
+  overflow: hidden;
+
 }
 
 
@@ -85,4 +93,13 @@
 
 .dog-card-img{
   border-radius: 15px;
+  width: 70%;
+  height: auto;
+}
+
+.login-form{
+  border: 1px solid black;
+  width: 50%;
+  margin: 15px auto;
+  padding: 15px;
 }

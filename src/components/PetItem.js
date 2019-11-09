@@ -9,7 +9,9 @@ class PetItem extends Component {
   return(
    <div className="dog-item-container"> 
      <div className="dog-item" onClick={() => this.props.handleClick(this.props.pet)}>
-     <img className="dog-img" src={img} alt={name}/>
+        <div className="dog-img-div">
+         <img className="dog-img" src={img} alt={name}/>
+        </div>
      <h2>{name} </h2>
      <div className="clear"></div>
      </div>

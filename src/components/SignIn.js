@@ -5,7 +5,7 @@ class SignIn extends React.Component {
     render (){
         return(
             <div>
-                <form>
+                <form className="login-form">
                     <label htmlFor="username">User Name:</label>
                     <input type="text" id='username'name="username" placeholder="write your username"/>
 
