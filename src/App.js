@@ -14,7 +14,7 @@ function App() {
 
       <header className="header"> 
         <h1>
-          DoggyDoption
+          DoggoDoption
         </h1>
         <NavLink className="nav-link" to='/'>Home</NavLink>
         <NavLink className="nav-link"to='/signin'>Sign In</NavLink>

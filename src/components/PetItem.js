@@ -14,7 +14,7 @@ class PetItem extends Component {
         </div>
      <h2>{name} </h2>
      <div className="clear"></div>
-     </div>
+   </div>
        
        
      
