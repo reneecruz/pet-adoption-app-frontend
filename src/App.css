@@ -43,21 +43,30 @@
 }
 
 .user-container{
-  border: 2px solid green;
+  /* border: 2px solid green; */
 }
 
 .pet-container{
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
 }
 
 .adoption-container{
-  border: 2px solid purple;
+  /* border: 2px solid purple; */
 }
 
 .dog-img{
-  margin: 10px;
-  height: 40vh;
+  margin: 0 auto;
+  height: 60vh;
   width: 100%;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0 ;
+  
+  
+}
+
+.dog-img-div{
+  overflow: hidden;
+
 }
 
 
@@ -65,7 +74,9 @@
 .dog-item{
  width: 30%;
  float: left;
- margin: 10px;
+ margin: 20px;
+ box-shadow: 3px 3px 5px 6px #ccc;
+ border-radius: 15px;
 }
 
 .clear{
@@ -75,4 +86,20 @@
 .dog-card-container{
   width: 60vw;
   margin: 10px auto;
+  box-shadow: 3px 3px 5px 6px #ccc;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.dog-card-img{
+  border-radius: 15px;
+  width: 70%;
+  height: auto;
+}
+
+.login-form{
+  border: 1px solid black;
+  width: 50%;
+  margin: 15px auto;
+  padding: 15px;
 }
