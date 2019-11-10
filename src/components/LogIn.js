@@ -43,12 +43,13 @@ class LogIn extends React.Component {
                })
            }else{
                this.props.setToken(data.token, data.user_id)
+              
            }
        })
     }
        // .then(console.log)
 
-       signUpSubmitted = (event) => {
+    signUpSubmitted = (event) => {
         event.preventDefault()
         console.log("derya is life")
         fetch("http://localhost:3000/users", {
@@ -68,6 +69,7 @@ class LogIn extends React.Component {
        })
        .then(res => res.json())
        .then(data => {
+           console.log(data)
            if (data.errors) {
                this.setState({
                    errors: data.errors
