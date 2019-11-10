@@ -5,6 +5,7 @@ import { Route, Switch, NavLink, Redirect } from 'react-router-dom';
 import HomeContainer from './containers/HomeContainer';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
+import LogIn from './components/LogIn';
 
 function App() {
 
@@ -17,15 +18,18 @@ function App() {
           DoggoDoption
         </h1>
         <NavLink className="nav-link" to='/'>Home</NavLink>
-        <NavLink className="nav-link"to='/signin'>Sign In</NavLink>
-        <NavLink className="nav-link"to='/signup'>Sign Up</NavLink>
+        
+        <NavLink className="nav-link" to='/signup'>Sign Up</NavLink>
+        <NavLink className="nav-link" to='/logout'>Log Out</NavLink>
+      
+      
 
       </header>
     
     <Switch>
-      <Route exact path={'/'} component={HomeContainer} />
-      <Route path={'/signin'} component={SignIn} />
-      <Route path={'/signup'} component={SignUp}/>
+      <Route exact path={'/'} render={renderProps => <HomeContainer renderProps={renderProps}/>} />
+      <Route exact path ={"/login"} render={renderProps => <HomeContainer renderProps={renderProps}/>}/>
+      <Route exact path ={"/signup"} render={renderProps => <HomeContainer renderProps={renderProps}/>}/>
     </Switch>
     </div>
   );
