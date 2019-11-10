@@ -3,9 +3,10 @@ import React from 'react';
 class SignUp extends React.Component {
 
     render (){
+        console.log(this.props)
         return(
             <div>
-              <form>
+              <form onChange={this.props.handleOnChange}>
                     <label htmlFor="name">Name:</label>
                     <input type="text" id='name' name="name" placeholder="write your name"/>
 
