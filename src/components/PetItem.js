@@ -4,7 +4,7 @@ class PetItem extends Component {
  
 
  render() {
-   const {name, img, age, breed, location} = this.props.pet
+   const {name, img} = this.props.pet
   //  console.log(this.props.pet)
   return(
    <div className="dog-item-container"> 
