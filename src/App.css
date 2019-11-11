@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  font-family: 'Courgette', cursive;
+  
 }
 
 .App-logo {
@@ -22,41 +24,79 @@
 }
 
 .header{
-  border: 2px solid black;
-  height: 25vh;
-  margin: 10px 5px;
+  width: 95%;
+  height: 35vh;
+  margin: 10px auto;
+  box-shadow: 3px 3px 5px 6px #ccc;
+  border-radius: 15px;
+  background-image: url("https://media2.giphy.com/media/X9FTTSAIz4g3rvCFK9/giphy.gif ");
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 40vw;
+  
+ 
 }
 
+.header h1{
+  float: right;
+  margin-right: 25px;
+}
+/* http://giphygifs.s3.amazonaws.com/media/Qw4X3Fr40xHU6E02khy/giphy.gif */
+/* */
 .home{
-  border: 2px solid red;
+  margin: 30px auto;
+  box-shadow: 3px 3px 5px 6px #ccc;
+  border-radius: 15px;
   height: 100vh;
   overflow: scroll;
-  margin: 10px 5px;
+  width: 95%;
+ background-image: url("https://image.cnbcfm.com/api/v1/image/105992231-1561667465295gettyimages-521697453.jpeg?v=1561667497");
+ background-position: top;
+ background-size:  100%;
+ background-repeat: no-repeat;
+ background-origin: padding-box;
+
 }
 
+.home ul li{
+  list-style: none;
+}
+
+.nav-bar{
+ margin-right: 15px;
+}
 .nav-link{
   width: 100px;
-  display: inline-block;
-  border: 2px solid black;
+  display: block;
+  box-shadow: 3px 3px 5px 6px #ccc;
   margin: 10px;
   padding:10px;
+  border-radius: 15px;
+  text-decoration: none;
+  float: right;
+ 
 }
 
-.user-container{
-  /* border: 2px solid green; */
-}
+
 
 .pet-container{
-  border: 1px solid black;
-  padding-left: 5%;
   height: 100%;
   overflow: auto;
+  
+  
+}
+
+.login-form, .sign-up-form{
+  box-shadow: 3px 3px 5px 6px #ccc;
+  border:none ;
+  border-radius:15px;
+  width:30%;
+  margin: 10px 5%;
+  padding: 15px;
 }
 
 
-.adoption-container{
-  /* border: 2px solid purple; */
-}
+
  
 
 .dog-img{
@@ -79,7 +119,7 @@
 .dog-item {
  width: 30%;
  float: left;
- margin: 40px;
+ margin: 20px;
  box-shadow: 3px 3px 5px 6px #ccc;
  border-radius: 15px;
 }
@@ -95,6 +135,8 @@
   clear: both;
 }
 
+
+
 .dog-card-container{
   width: 60vw;
   margin: 10px auto;
@@ -109,14 +151,67 @@
   height: auto;
 }
 
-.login-form{
+/* .login-form, .sign-up-form{
   border: 1px solid black;
-  width: 50%;
+  width: 70%;
+  height: 5vh;
   margin: 15px auto;
   padding: 15px;
+} */
+
+.login-form input[type="text"], input[type="password"], 
+.sign-up-form input[type="text"], input[type="password"] .select{  
+   height:15px;
+   margin: 15px;
+   text-align: center;
+   display: block;
+  
 }
+
+.sign-up-form .name-input, .password, .username, .select, .location, input[type="submit"], 
+.login-form .name-input, .password, input[type="submit"]{
+   height:15px;
+   margin: 15px;
+   text-align: left;
+   display: block; 
+}
+
+.sign-up-form .select{
+  height:25px;
+}
+
+.sign-up-form input[type="submit"], .login-form input[type="submit"]{
+  width:130px;
+  text-align: center;
+
+}
+
 
 .profile-img{
   width: 100%;
 }
 
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}

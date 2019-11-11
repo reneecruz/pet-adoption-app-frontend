@@ -10,6 +10,7 @@ class LogIn extends React.Component {
         password: '',
         name: '',
         location: '',
+        gender: '',
         errors: []
     }
 
@@ -69,7 +70,8 @@ class LogIn extends React.Component {
                    name: this.state.name,
                    location: this.state.location,
                    username: this.state.username,
-                   password: this.state.password
+                   password: this.state.password,
+                   gender: this.state.gender
                }
            )
        })
@@ -100,27 +102,41 @@ class LogIn extends React.Component {
                {
                    this.props.renderProps.location.pathname === '/'  ?
                    <form onChange={this.handleOnChange} className="login-form">
-                    <label htmlFor="username">User Name:</label>
+                    <label htmlFor="username" className="name-input">User Name:</label>
                     <input type="text" id='username'name="username" placeholder="write your username"/>
 
-                    <label htmlFor="password">Password:</label>
+                    <label htmlFor="password" className="password">Password:</label>
                     <input type="password" id='password' name="password" placeholder="write your password"/>
 
                     <input type="submit" onClick={this.logInSubmitted}/>
                 </form>
                         : 
-                   <form onChange={this.handleOnChange}>
-                    <label htmlFor="name">Name:</label>
+                   <form onChange={this.handleOnChange} className="sign-up-form">
+                    <label htmlFor="name" className="name-input">Name:</label>
                     <input type="text" id='name' name="name" placeholder="write your name"/>
 
-                    <label htmlFor="location">Location:</label>
+                    <label htmlFor="location" className="location"> Location:</label>
                     <input type="text" id='location' name="location" placeholder="write your location"/>
 
-                    <label htmlFor="username">User Name:</label>
-                    <input type="text" id='username' name="username" placeholder="write your username"/>
+                    <label htmlFor="gender" className="select">Gender:</label>
+                        <select name="gender" className="select" >
+                            <option  className="option" value="default">Your prefered gender</option>
+                            <option className="option" value="Female">
+                            Female
+                            </option>
+                            <option className="option" value="Male">
+                            Male
+                            </option>
+                            <option className="option" value="Prefered not to say">
+                               Prefered not to say
+                            </option>
+                        </select>
 
-                    <label htmlFor="password">Password:</label>
-                    <input type="password" id='password' name="password" placeholder="write your password"/>
+                    <label htmlFor="username" className="username">User Name:</label>
+                    <input type="text" id='username' name="username" className="username-input"placeholder="write your username"/>
+
+                    <label htmlFor="password" className="password">Password:</label>
+                    <input type="password" id='password' className="password-input" name="password" placeholder="write your password"/>
 
                     <input type="submit" onClick={this.signUpSubmitted} />
 
