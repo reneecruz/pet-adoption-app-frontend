@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 
 class LogIn extends React.Component {
@@ -46,6 +47,11 @@ class LogIn extends React.Component {
               
            }
        })
+       this.setState({
+           username: '',
+           password: ''
+       })
+    //    this.props.history.push('/')
     }
        // .then(console.log)
 
@@ -69,7 +75,6 @@ class LogIn extends React.Component {
        })
        .then(res => res.json())
        .then(data => {
-           console.log(data)
            if (data.errors) {
                this.setState({
                    errors: data.errors
@@ -93,7 +98,7 @@ class LogIn extends React.Component {
                 </ul>
                
                {
-                   this.props.renderProps.location.pathname === '/' && !this.state.login ?
+                   this.props.renderProps.location.pathname === '/'  ?
                    <form onChange={this.handleOnChange} className="login-form">
                     <label htmlFor="username">User Name:</label>
                     <input type="text" id='username'name="username" placeholder="write your username"/>
@@ -127,4 +132,4 @@ class LogIn extends React.Component {
     }
 }
 
-export default LogIn;
+export default withRouter(LogIn);
