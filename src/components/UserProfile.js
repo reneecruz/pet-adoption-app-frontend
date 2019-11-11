@@ -88,7 +88,9 @@ class UserProfile extends Component {
     { !this.state.editButton ? 
     <>
     <div className="profile-div">
-     <img className="profile-img" src="https://banner2.cleanpng.com/20180521/ocp/kisspng-computer-icons-user-profile-avatar-french-people-5b0365e4f1ce65.9760504415269493489905.jpg"/>
+     <img className="profile-img" 
+     src="https://banner2.cleanpng.com/20180521/ocp/kisspng-computer-icons-user-profile-avatar-french-people-5b0365e4f1ce65.9760504415269493489905.jpg"
+     alt={this.state.name}/>
      </div>
      <h2 key={this.state.user.id}>
        {this.state.name}
