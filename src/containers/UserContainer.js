@@ -4,16 +4,46 @@ import AdoptionContainer from './AdoptionContainer'
 
 class UserContainer  extends Component {
 
+state = {
+  user: {}
+}
+
+fetchUser = ()=>{
+    const {userId, token} = this.props 
+    fetch(`http://localhost:3000/users/${userId}`, {
+      headers: {
+        "Authorization": token
+      }
+    })
+    .then(res=>res.json())
+    .then(userData => {
+      this.setState({
+        user: userData
+        
+      })
+    })
+}
+
+componentDidMount(){
+  this.fetchUser()
+}
+
+
+
+
+
  render() {
+
   return(
    <div className='user-container'>
-       <UserProfile userId={this.props.userId}
+       <UserProfile user={this.state.user}
                     token={this.props.token}
                     handleOnClick={this.props.handleOnClick}
-                    logOut={this.props.logOut}/>
-       <AdoptionContainer pet={this.props.pet} 
-                          token={this.props.token}
-                          userId={this.props.userId}/>
+                    logOut={this.props.logOut}
+                    fetchUser={this.fetchUser}/>
+       <AdoptionContainer token={this.props.token}
+                          user={this.state.user}
+                          />
    </div>
     )
    }

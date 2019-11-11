@@ -47,6 +47,7 @@ class PetContainer extends Component {
  render() {
   //  console.log(this.props.token)
   // console.log(this.state.onOff)
+  console.log(this.state.pet)
   return(
    <div className="pet-container">
        

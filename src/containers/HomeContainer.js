@@ -9,7 +9,7 @@ class Home extends React.Component {
         loggedInUserId: null,
         token: null,
         profileOn: false,
-        pet: {}
+        pet: {},
     }
 
     componentDidMount() {
@@ -48,30 +48,31 @@ class Home extends React.Component {
 
 
     bringDoggy = (petItem) => {
-        console.log("bring doggy", petItem)
+        // console.log("bring doggy", petItem)
         this.setState({
         pet: petItem
         })
         fetch("http://localhost:3000/adoptions", {
-      method: 'POST',
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json",
-        "Authorization": this.state.token
-      },
-      body: JSON.stringify({
-        user_id: this.state.loggedInUserId,
-        pet_id: petItem.id
-      })
-    })
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "Authorization": this.state.token
+        },
+        body: JSON.stringify({
+            user_id: this.state.loggedInUserId,
+            pet_id: petItem.id
+        })
+        })
         .then(res => res.json())
-        .then(adoptionData => console.log(adoptionData))
+      
     }
 
 
     render() {
         // console.log(this.state.token)
         // console.log(this.state.pet.id)
+        console.log(this.state.adoptionArray)
         return(
             <div className="home">
                 
@@ -83,8 +84,7 @@ class Home extends React.Component {
                         <UserContainer userId={this.state.loggedInUserId}
                                        token={this.state.token}
                                        handleOnClick={this.handleOnClick}
-                                       logOut={this.logOut}
-                                       pet={this.state.pet} /> :
+                                       logOut={this.logOut}/> :
                         <PetContainer token={this.state.token} loggedInUserId={this.state.loggedInUserId} bringDoggy={this.bringDoggy}/>
                         }
                     </>

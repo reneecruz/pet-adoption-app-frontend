@@ -5,10 +5,11 @@ class AdoptionContainer extends Component {
     
 
  render() {
+   console.log(this.props)
   return(
    <div  className="adoption-container">
-       Adoption Container
-       <AdoptionList/>
+      i should render pets
+      
    </div>
     )
    }
