@@ -35,7 +35,7 @@ function App() {
     <Switch>
 
       <Route exact path={'/'} render={renderProps => <HomeContainer renderProps={renderProps}/>} />
-      {/* <Route exact path ={"/login"} render={renderProps => <HomeContainer renderProps={renderProps}/>}/> */}
+      {/* <Route exact path ={"/prpfile"} render={renderProps => <HomeContainer renderProps={renderProps}/>}/> */}
       <Route exact path ={"/signup"} render={renderProps => <HomeContainer renderProps={renderProps}/>}/>
       
     </Switch>

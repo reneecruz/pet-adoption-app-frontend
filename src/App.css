@@ -76,7 +76,7 @@
 
 
 
-.dog-item{
+.dog-item {
  width: 30%;
  float: left;
  margin: 40px;
@@ -84,6 +84,13 @@
  border-radius: 15px;
 }
 
+.profile-item{
+  width: 30%;
+ float: left;
+ margin: 10% 35%;
+ box-shadow: 3px 3px 5px 6px #ccc;
+ border-radius: 15px;
+}
 .clear{
   clear: both;
 }
@@ -108,3 +115,8 @@
   margin: 15px auto;
   padding: 15px;
 }
+
+.profile-img{
+  width: 100%;
+}
+
