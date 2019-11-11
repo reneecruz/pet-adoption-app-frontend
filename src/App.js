@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Route, Switch, NavLink  } from 'react-router-dom';
+import { Route, Switch} from 'react-router-dom';
 import HomeContainer from './containers/HomeContainer';
 import NavBar from './components/NavBar';
 

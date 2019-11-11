@@ -48,7 +48,7 @@ class Home extends React.Component {
 
 
     render() {
-        console.log(this.state.token)
+        // console.log(this.state.token)
         return(
             <div className="home">
                 
