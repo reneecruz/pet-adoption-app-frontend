@@ -33,10 +33,38 @@ class UserProfile extends Component {
     })
   }
 
+  handleOnChange = (event) => {
+    console.log(event.target.value)
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+
+  handleOnSubmit = (event) => {
+    event.preventDefault()
+    console.log("submit")
+    fetch(`http://localhost:3000/users/${this.props.userId}`, {
+      method: 'PATCH',
+      headers: {
+        "Authorization": this.props.token,
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      }, 
+      body: JSON.stringify({
+        name: this.state.name,
+        username: this.state.username,
+        location: this.state.location
+      })
+
+    })
+    .then(res => res.json())
+    .then(console.log)
+  }
+
 
  render() {
   
-   console.log(this.props.userId, this.props.token)
+  //  console.log(this.props.userId, this.props.token)
   return(
    <div className="profile-item">
     { !this.state.editButton ? 
@@ -54,15 +82,26 @@ class UserProfile extends Component {
     
     <p> 
        <b>Username:</b> 
-       {this.state.Username}
+       {this.state.username}
     </p>
     </> :
 
-    <form></form>
+    <form onChange={this.handleOnChange}>
+      <label htmlFor="name">Name:</label>
+      <input type="text" id="name" name="name" value={this.state.name}/>
+
+      <label htmlFor="username" >Username:</label>
+      <input type="text" id="username" name="username" value={this.state.username}/>
+
+      <label htmlFor="location">Location:</label>
+      <input type="text" id="location" name="location" value={this.state.location}/>
+
+      <input type="submit" onClick={(event) => this.handleOnSubmit(event)}/>
+    </form>
    }
 
     <button onClick={this.handleOnClick}>
-      { this.state.editButton ?
+      { this.state.editButton && this.props.userId ?
        "Profile" : "Edit me"
       }
     </button>
