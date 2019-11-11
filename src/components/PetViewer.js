@@ -8,8 +8,8 @@ class PetViewer extends Component {
    console.log(this.props.pet)
   return(
    <div>
-     <button>Back</button>
-    <PetCard pet={this.props.pet} handleClick={this.props.handleClick}/>
+     <button onClick={this.props.handleClick}>Back</button>
+    <PetCard pet={this.props.pet} handleClick={this.props.handleClick} bringDoggy={this.props.bringDoggy}/>
    </div>
     )
    }
