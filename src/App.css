@@ -76,6 +76,10 @@
   overflow: auto;
 }
 
+.adoption{
+  color: red;
+}
+
 .login-form, .sign-up-form{
   box-shadow: 3px 3px 5px 6px #ccc;
   border:none ;
