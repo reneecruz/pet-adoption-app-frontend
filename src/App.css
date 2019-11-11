@@ -1,7 +1,6 @@
 .App {
   text-align: center;
   font-family: 'Courgette', cursive;
-  
 }
 
 .App-logo {
@@ -33,16 +32,13 @@
   background-position: left;
   background-repeat: no-repeat;
   background-size: 40vw;
-  
- 
 }
 
 .header h1{
   float: right;
   margin-right: 25px;
 }
-/* http://giphygifs.s3.amazonaws.com/media/Qw4X3Fr40xHU6E02khy/giphy.gif */
-/* */
+
 .home{
   margin: 30px auto;
   box-shadow: 3px 3px 5px 6px #ccc;
@@ -55,7 +51,6 @@
  background-size:  100%;
  background-repeat: no-repeat;
  background-origin: padding-box;
-
 }
 
 .home ul li{
@@ -74,16 +69,11 @@
   border-radius: 15px;
   text-decoration: none;
   float: right;
- 
 }
-
-
 
 .pet-container{
   height: 100%;
   overflow: auto;
-  
-  
 }
 
 .login-form, .sign-up-form{
@@ -95,26 +85,17 @@
   padding: 15px;
 }
 
-
-
- 
-
 .dog-img{
   margin: 0 auto;
   height: 60vh;
   width: 100%;
   object-fit: cover;
   border-radius: 15px 15px 0 0 ;
-  
-  
 }
 
 .dog-img-div{
   overflow: hidden;
-
 }
-
-
 
 .dog-item {
  width: 30%;
@@ -135,8 +116,6 @@
   clear: both;
 }
 
-
-
 .dog-card-container{
   width: 60vw;
   margin: 10px auto;
@@ -151,21 +130,12 @@
   height: auto;
 }
 
-/* .login-form, .sign-up-form{
-  border: 1px solid black;
-  width: 70%;
-  height: 5vh;
-  margin: 15px auto;
-  padding: 15px;
-} */
-
 .login-form input[type="text"], input[type="password"], 
 .sign-up-form input[type="text"], input[type="password"] .select{  
    height:15px;
    margin: 15px;
    text-align: center;
    display: block;
-  
 }
 
 .sign-up-form .name-input, .password, .username, .select, .location, input[type="submit"], 
@@ -183,9 +153,7 @@
 .sign-up-form input[type="submit"], .login-form input[type="submit"]{
   width:130px;
   text-align: center;
-
 }
-
 
 .profile-img{
   width: 100%;
@@ -195,7 +163,6 @@
 .tooltip {
   position: relative;
   display: inline-block;
-
 }
 
 .tooltip .tooltiptext {
