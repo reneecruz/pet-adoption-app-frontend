@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 
 class UserProfile extends Component {
  state = {
+   user: {},
    name: '',
    username: '',
    location: '', 
@@ -20,6 +21,7 @@ class UserProfile extends Component {
     .then(res=>res.json())
     .then(userData => {
       this.setState({
+        user: userData,
         name: userData.name,
         username: userData.username,
         location: userData.location
@@ -58,7 +60,23 @@ class UserProfile extends Component {
 
     })
     .then(res => res.json())
-    .then(console.log)
+    .then(
+      this.setState({
+        editButton: false
+      })
+
+    )
+  }
+
+  handleDelete = (event, user)=>{
+    console.log(user.id)
+    fetch(`http://localhost:3000/users/${user.id}`,{
+      method: "DELETE"
+    })
+    .then(
+      this.props.handleOnClick(),
+      this.props.logOut()
+    )
   }
 
 
@@ -72,7 +90,7 @@ class UserProfile extends Component {
     <div className="profile-div">
      <img className="profile-img" src="https://banner2.cleanpng.com/20180521/ocp/kisspng-computer-icons-user-profile-avatar-french-people-5b0365e4f1ce65.9760504415269493489905.jpg"/>
      </div>
-     <h2>
+     <h2 key={this.state.user.id}>
        {this.state.name}
      </h2>
      <p> 
@@ -105,7 +123,9 @@ class UserProfile extends Component {
        "Profile" : "Edit me"
       }
     </button>
-
+    <button onClick={(event) => this.handleDelete(event, this.state.user)}>
+      Delete your account
+    </button>
 
    </div>
     )

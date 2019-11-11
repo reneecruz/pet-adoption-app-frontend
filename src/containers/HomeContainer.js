@@ -58,7 +58,9 @@ class Home extends React.Component {
                 <button onClick={this.handleOnClick}> { !this.state.profileOn ? "Profile" : "Go back" } </button>
                 { this.state.profileOn ? 
                 <UserContainer userId={this.state.loggedInUserId}
-                               token={this.state.token}/> :
+                               token={this.state.token}
+                               handleOnClick={this.handleOnClick}
+                               logOut={this.logOut}/> :
                 <PetContainer token={this.state.token} loggedInUserId={this.state.loggedInUserId}/>
                 }
                 </>
