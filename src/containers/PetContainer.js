@@ -41,7 +41,7 @@ class PetContainer extends Component {
   // console.log(this.state.onOff)
   return(
    <div className="pet-container">
-       Pet Container 
+       
        {
          !this.state.onOff ? 
          <PetList pets={this.state.pets} handleClick={this.handleClick} /> :
