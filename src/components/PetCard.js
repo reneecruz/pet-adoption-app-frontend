@@ -14,11 +14,12 @@ class PetCard extends Component {
           <p><b>Age : </b>{age} </p>
           <p><b>Breed : </b> {breed}</p>
           <p><b>Location : </b> {location}</p>
+
       <div className="clear"></div>
-     </div>
-       
-       
-     
+     </div> 
+     <div>
+      <button onClick={() => this.props.bringDoggy(this.props.pet)}>Adopt Me!</button>
+    </div> 
    </div>
     )
    }

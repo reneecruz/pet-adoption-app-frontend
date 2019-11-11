@@ -11,7 +11,9 @@ class UserContainer  extends Component {
                     token={this.props.token}
                     handleOnClick={this.props.handleOnClick}
                     logOut={this.props.logOut}/>
-       {/* <AdoptionContainer/> */}
+       <AdoptionContainer pet={this.props.pet} 
+                          token={this.props.token}
+                          userId={this.props.userId}/>
    </div>
     )
    }

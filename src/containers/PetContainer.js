@@ -24,9 +24,17 @@ class PetContainer extends Component {
   //  console.log("click", petItem)
    this.setState({
      pet: petItem,
-     onOff: true
+     onOff: !this.state.onOff
    })
  }
+
+// handleBackButton = () => {
+//   console.log("back button")
+//   this.setState({
+    
+//   })
+// }
+
 
  handleRemove = ()=>{
   this.setState({
@@ -36,8 +44,8 @@ class PetContainer extends Component {
  }
   
  
-
  render() {
+  //  console.log(this.props.token)
   // console.log(this.state.onOff)
   return(
    <div className="pet-container">
@@ -46,7 +54,7 @@ class PetContainer extends Component {
          !this.state.onOff ? 
          <PetList pets={this.state.pets} handleClick={this.handleClick} /> :
 
-         <PetViewer  pet={this.state.pet} handleClick={this.handleRemove }/>
+         <PetViewer  pet={this.state.pet} handleClick={this.handleRemove} bringDoggy={this.props.bringDoggy}/>
        }
        
        
