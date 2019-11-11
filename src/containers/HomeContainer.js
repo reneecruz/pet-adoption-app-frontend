@@ -53,18 +53,18 @@ class Home extends React.Component {
             <div className="home">
                 
                 {this.state.token ?
-                <>
-                <button onClick={this.logOut}>Log Out</button>
-                <button onClick={this.handleOnClick}> { !this.state.profileOn ? "Profile" : "Go back" } </button>
-                { this.state.profileOn ? 
-                <UserContainer userId={this.state.loggedInUserId}
-                               token={this.state.token}
-                               handleOnClick={this.handleOnClick}
-                               logOut={this.logOut}/> :
-                <PetContainer token={this.state.token} loggedInUserId={this.state.loggedInUserId}/>
-                }
-                </>
-                :
+                    <>
+                      <button onClick={this.logOut}>Log Out</button>
+                      <button onClick={this.handleOnClick}> { !this.state.profileOn ? "Profile" : "Go back" } </button>
+                        { this.state.profileOn ? 
+                        <UserContainer userId={this.state.loggedInUserId}
+                                       token={this.state.token}
+                                       handleOnClick={this.handleOnClick}
+                                       logOut={this.logOut}/> :
+                        <PetContainer token={this.state.token} loggedInUserId={this.state.loggedInUserId}/>
+                        }
+                    </>
+                   :
                 <LogIn setToken={this.setToken} renderProps={this.props.renderProps}/>
                 }
 
