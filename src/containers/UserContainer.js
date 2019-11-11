@@ -8,7 +8,9 @@ class UserContainer  extends Component {
   return(
    <div className='user-container'>
        <UserProfile userId={this.props.userId}
-                    token={this.props.token}/>
+                    token={this.props.token}
+                    handleOnClick={this.props.handleOnClick}
+                    logOut={this.props.logOut}/>
        {/* <AdoptionContainer/> */}
    </div>
     )
