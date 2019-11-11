@@ -95,6 +95,7 @@ class UserProfile extends Component {
 
   handleDelete = (event, user)=>{
     console.log(user.id)
+    // {"Are your sure you wanna leave puppies alone 🐶"}
     fetch(`http://localhost:3000/users/${user.id}`,{
       method: "DELETE"
     })
@@ -103,8 +104,9 @@ class UserProfile extends Component {
       this.props.logOut()
     )
   }
+   
 
-
+ 
  render() {
   // console.log(this.renderGenderPhoto())
   //  console.log(this.props.userId, this.props.token)
@@ -168,9 +170,12 @@ class UserProfile extends Component {
        "Profile" : "Edit me"
       }
     </button>
-    <button onClick={(event) => this.handleDelete(event, this.state.user)}>
-      Delete your account
-    </button>
+    
+        <button className="tooltip"onClick={(event) => this.handleDelete(event, this.state.user)}>
+         Delete your account
+         <span className="tooltiptext">Are your sure that you wanna leave puppies alone? 🐶</span>
+        </button>
+    
 
    </div>
     )

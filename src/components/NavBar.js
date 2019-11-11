@@ -25,7 +25,11 @@ renderButtons = () => {
             <h1>
               DoggoDoption
             </h1>
-            {this.renderButtons()}    
+            <div className="clear"></div>
+            <div className="nav-bar">
+                {this.renderButtons()}  
+            </div>
+              
           </header>
           </div>
       )
