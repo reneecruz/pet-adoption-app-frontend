@@ -7,6 +7,7 @@ class UserProfile extends Component {
    name: '',
    username: '',
    location: '', 
+   gender: '',
    editButton: false
  }
  
@@ -24,6 +25,7 @@ class UserProfile extends Component {
         user: userData,
         name: userData.name,
         username: userData.username,
+        gender: userData.gender,
         location: userData.location
       })
     })
@@ -55,7 +57,8 @@ class UserProfile extends Component {
       body: JSON.stringify({
         name: this.state.name,
         username: this.state.username,
-        location: this.state.location
+        location: this.state.location,
+        gender: this.state.gender
       })
 
     })
@@ -66,6 +69,28 @@ class UserProfile extends Component {
       })
 
     )
+  }
+
+  renderGenderPhoto = ()=>{
+    if (this.state.gender === "Female"){
+      return  <img className="profile-img" 
+      src="https://cdn1.iconfinder.com/data/icons/avatars-1-5/136/87-512.png"
+       alt={this.state.name}/> 
+    } else if( this.state.gender === "Male"){
+      
+       return <img className="profile-img" 
+        src="https://i7.pngguru.com/preview/136/22/549/user-profile-computer-icons-girl-customer-avatar-thumbnail.jpg"
+         alt={this.state.name}/> 
+      
+    } else  if (this.state.gender === "Prefered not to say"){
+     return  <img className="profile-img" 
+        src="https://i-love-png.com/images/user_png_1449302.png"
+         alt={this.state.name}/> 
+    } else {
+      return  <img className="profile-img" 
+      src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Question_mark_alternate.svg"
+       alt={this.state.name}/>
+    }
   }
 
   handleDelete = (event, user)=>{
@@ -81,17 +106,14 @@ class UserProfile extends Component {
 
 
  render() {
-  
+  // console.log(this.renderGenderPhoto())
   //  console.log(this.props.userId, this.props.token)
   return(
    <div className="profile-item">
     { !this.state.editButton ? 
     <>
     <div className="profile-div">
-     <img className="profile-img" 
-     src="https://banner2.cleanpng.com/20180521/ocp/kisspng-computer-icons-user-profile-avatar-french-people-5b0365e4f1ce65.9760504415269493489905.jpg"
-     alt={this.state.name}/>
-     </div>
+       {this.renderGenderPhoto()}
      <h2 key={this.state.user.id}>
        {this.state.name}
      </h2>
@@ -104,6 +126,12 @@ class UserProfile extends Component {
        <b>Username:</b> 
        {this.state.username}
     </p>
+
+    <p> 
+       <b>Gender:</b> 
+       {this.state.gender}
+    </p>
+    </div>
     </> :
 
     <form onChange={this.handleOnChange}>
@@ -115,6 +143,21 @@ class UserProfile extends Component {
 
       <label htmlFor="location">Location:</label>
       <input type="text" id="location" name="location" value={this.state.location}/>
+
+      <label htmlFor="gender">Gender:</label>
+      <select name="gender">
+        <option value="default">Your prefered gender</option>
+        <option value="Female">
+          Female
+        </option>
+        <option value="Male">
+          Male
+        </option>
+        <option value="Prefered not to say">
+          Prefered not to say
+        </option>
+      </select>
+  
 
       <input type="submit" onClick={(event) => this.handleOnSubmit(event)}/>
     </form>
