@@ -43,7 +43,7 @@
   margin: 30px auto;
   box-shadow: 3px 3px 5px 6px #ccc;
   border-radius: 15px;
-  height: 100vh;
+  height: auto;
   overflow: scroll;
   width: 95%;
  background-image: url("https://image.cnbcfm.com/api/v1/image/105992231-1561667465295gettyimages-521697453.jpeg?v=1561667497");
@@ -131,6 +131,26 @@
 .dog-card-img{
   border-radius: 15px;
   width: 70%;
+  height: auto;
+}
+
+.adoption-img-container{
+ height: 30vh;
+}
+
+
+.adoption-img{
+  width: 100%;
+  border-radius: 15px 15px 0 0 ;
+}
+
+.adoption-item{
+  box-shadow: 3px 3px 5px 6px #ccc;
+  border-radius: 15px;
+  display: block;
+  float: left;
+  margin: 15px;
+  width: 20%;
   height: auto;
 }
 
