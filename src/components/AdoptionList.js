@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import AdoptionItem from './AdoptionItem'
 
 class AdoptionList extends Component {
- state = {}
+ 
  render() {
+   console.log(this.props.adoption)
   return(
    <div>
-       Adoption List
-       <AdoptionItem/>
+      <h3>Pet Name: {this.props.adoption.pet.name}</h3>
    </div>
     )
    }
