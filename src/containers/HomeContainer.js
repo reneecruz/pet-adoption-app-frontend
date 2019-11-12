@@ -8,20 +8,17 @@ class Home extends React.Component {
     state = {
         loggedInUserId: null,
         token: null,
-        profileOn: false,
-        pet: {},
-        adopted: false
+        profileButtonClicked: false
+        
     }
 
     componentDidMount() {
-
         if(localStorage.token){
             this.setState({
                 loggedInUserId: localStorage.loggedInUserId,
                 token: localStorage.token
             })
         }
-        
     }
 
     setToken = (token, loggedInUserId) => {
@@ -43,38 +40,39 @@ class Home extends React.Component {
     
     handleOnClick = ()=>{
       this.setState({
-        profileOn: !this.state.profileOn
+        profileButtonClicked: !this.state.profileButtonClicked
       })
     }
 
-
-    
-
-
     render() {
         // console.log(this.state.token)
-        // console.log(this.state.pet.id)
-        console.log(this.state.adoptionArray)
-        return(
+       
+         return(
+            
             <div className="home">
                 
+                {/* First ternary is for to check if we have a token
+                    If we have it, render logout, profile/go back buttons and Usercontainer, PetContainer
+                    else render LogIn
+                */}
                 {this.state.token ?
                     <>
                       <button onClick={this.logOut}>Log Out</button>
-                      <button onClick={this.handleOnClick}> { !this.state.profileOn ? "Profile" : "Go back" } </button>
-                        { this.state.profileOn ? 
-                        <UserContainer userId={this.state.loggedInUserId}
-                                       token={this.state.token}
-                                       handleOnClick={this.handleOnClick}
-                                       logOut={this.logOut}/> :
-                        <PetContainer token={this.state.token} 
-                                      loggedInUserId={this.state.loggedInUserId}
-                                      bringDoggy={this.bringDoggy}
-                                      adopted={this.state.adopted}/>
+                      <button onClick={this.handleOnClick}> { 
+                          /* Second ternary is for to check the profileOn if it is on or off*/
+                        !this.state.profileButtonClicked ? "Profile" : "Go back" } </button>
+                        {  /* Third ternary is checking if profileOn is true, if that so, 
+                             UserContainer will be rendered, else PetContainer*/
+                            ! this.state.profileButtonClicked ? 
+                             <PetContainer /> :
+                             <UserContainer handleOnClick={this.handleOnClick}
+                                       logOut={this.logOut}/>
+                        
                         }
                     </>
                    :
-                <LogIn setToken={this.setToken} renderProps={this.props.renderProps}/>
+                <LogIn setToken={this.setToken} 
+                       renderProps={this.props.renderProps}/>
                 }
 
             </div>
