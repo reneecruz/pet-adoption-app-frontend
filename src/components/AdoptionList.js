@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 class AdoptionList extends Component {
  
  render() {
-   console.log(this.props.adoption)
+  //  console.log(this.props.adoption)
   return(
    <div className="adoption-container">
      <div className="adoption-item">

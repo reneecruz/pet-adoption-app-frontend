@@ -1,25 +1,26 @@
 import React, { Component } from 'react'
-import AdoptionContainer from '../containers/AdoptionContainer'
 
 
 class UserProfile extends Component {
 
  state = {
+    isEditFormOn: false,
     name: "",
     username: "",
     location: "", 
-    gender: "",
-    editButton: false
+    gender: ""
+    
  }
  
 
-  handleOnClick = ()=>{
+  handleEditButton = ()=>{
     this.setState({
+      isEditFormOn: !this.state.isEditFormOn,
       name: this.props.user.name,
       username: this.props.user.username,
       location: this.props.user.location, 
-      gender: this.props.user.gender,
-      editButton: !this.state.editButton
+      gender: this.props.user.gender
+      
     })
   }
 
@@ -32,11 +33,11 @@ class UserProfile extends Component {
 
   handleOnSubmit = (event) => {
     event.preventDefault()
-    console.log("submit")
+    // console.log("submit")
     fetch(`http://localhost:3000/users/${this.props.user.id}`, {
       method: 'PATCH',
       headers: {
-        "Authorization": this.props.token,
+        "Authorization": localStorage.token,
         "Content-Type": "application/json",
         "Accept": "application/json"
       }, 
@@ -52,10 +53,9 @@ class UserProfile extends Component {
     .then(() => {
       // console.log(updatedUser)
       this.setState({
-          editButton: false
+           isEditFormOn: false
         }, this.props.fetchUser())
-    }
-
+      }
     )
       
   }
@@ -82,56 +82,17 @@ class UserProfile extends Component {
     }
   }
 
-  handleDelete = (event, user)=>{
-    // console.log(user.id)
-
-    // {"Are your sure you wanna leave puppies alone 🐶"}
-    fetch(`http://localhost:3000/users/${user.id}`,{
+  handleDelete = ()=>{
+    fetch(`http://localhost:3000/users/${this.props.user.id}`,{
       method: "DELETE"
     })
     .then(
-      this.props.handleOnClick(),
       this.props.logOut()
     )
   }
-
- 
- render() {
-  // console.log(this.renderGenderPhoto())
-  if (this.props.user.id){
-
-    console.log(this.props.user)
-    //  console.log(this.props.userId, this.props.token)
-    return(
-     <div className="profile-item">
-      { !this.state.editButton ? 
-      <>
-      <div className="profile-div">
-         {this.renderGenderPhoto()}
-       <h2>
-         {this.props.user.name}
-       </h2>
-       <p> 
-         <b>Location:</b> 
-         {this.props.user.location}
-      </p>
-      
-      <p> 
-         <b>Username:</b> 
-         {this.props.user.username}
-      </p>
   
-      <p> 
-         <b>Gender:</b> 
-         {this.props.user.gender}
-      </p>
-       
-        
-      </div>
-     
-      </> :
-  
-      <form onChange={this.handleOnChange}>
+  editForm =  ()=>{
+   return (<form onChange={this.handleOnChange}>
         <label htmlFor="name">Name:</label>
         <input type="text" id="name" name="name" value={this.state.name}/>
   
@@ -155,28 +116,66 @@ class UserProfile extends Component {
           </option>
         </select>
     
-  
         <input type="submit" onClick={(event) => this.handleOnSubmit(event)}/>
-      </form>
-     }
-  
-      <button onClick={this.handleOnClick}>
-        { this.state.editButton && this.props.userId ?
-         "Profile" : "Edit me"
-        }
-      </button>
+    </form>)
+  }
+
+  profile = ()=>{
+    return (<div className="profile-div">
+         {this.renderGenderPhoto()}
+         <h2>
+           {this.props.user.name}
+         </h2>
+
+         <p> 
+           <b>Location:</b> 
+           {this.props.user.location}
+         </p>
       
-          <button className="tooltip"onClick={(event) => this.handleDelete(event, this.props.user)}>
-           Delete your account
-           <span className="tooltiptext">Are your sure that you wanna leave puppies alone? 🐶</span>
-          </button>
+         <p> 
+           <b>Username:</b> 
+           {this.props.user.username}
+         </p>
   
+         <p> 
+           <b>Gender:</b> 
+           {this.props.user.gender}
+         </p>
+      </div>)
+  }
+ 
+ render() {
+  // console.log(this.renderGenderPhoto())
+  // console.log(this.props.user)
+
+  if (this.props.user.id){
+    return(
+      <div className="profile-item">
+       { this.state.isEditFormOn ? 
+          this.editForm()
+           :
+          this.profile()
+       }
+  
+         <button onClick={this.handleEditButton}>
+            { this.state.isEditFormOn?
+              "Profile" : "Edit me"
+            }
+
+         </button>
+
+         <button className="tooltip" onClick={this.handleDelete}>
+            Delete your account
+            <span className="tooltiptext">Are your sure that you wanna leave puppies alone? 🐶</span>
+          </button>
+
      </div>
       )
      } else
-     return (
-     <>
-     </>)
+       return (
+         <> 
+         </>
+     )
   }
  }
 
