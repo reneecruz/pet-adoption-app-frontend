@@ -5,7 +5,7 @@ class PetCard extends Component {
 
  render() {
    const {name, img, age, breed, location} = this.props.pet
-  //  console.log(this.props.pet)
+   console.log(this.props.pet)
   return(
    <div className="dog-card-container"> 
       <div className="dog-card" onClick={() => this.props.handleClick(this.props.pet)}>
@@ -18,7 +18,7 @@ class PetCard extends Component {
       <div className="clear"></div>
      </div> 
      <div>
-      <button onClick={() => this.props.bringDoggy(this.props.pet)}>Adopt Me!</button>
+      {this.props.pet.adoption ? `Im Adopted!! by ${this.props.pet.adoption.user.name}` : <button onClick={() => this.props.bringDoggy(this.props.pet)}>Adopt Me ❣️ </button>}
     </div> 
    </div>
     )

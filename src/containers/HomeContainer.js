@@ -10,6 +10,7 @@ class Home extends React.Component {
         token: null,
         profileOn: false,
         pet: {},
+        adopted: false
     }
 
     componentDidMount() {
@@ -50,7 +51,9 @@ class Home extends React.Component {
     bringDoggy = (petItem) => {
         // console.log("bring doggy", petItem)
         this.setState({
-        pet: petItem
+        pet: petItem,
+        adopted: true
+         
         })
         fetch("http://localhost:3000/adoptions", {
         method: 'POST',
@@ -85,7 +88,10 @@ class Home extends React.Component {
                                        token={this.state.token}
                                        handleOnClick={this.handleOnClick}
                                        logOut={this.logOut}/> :
-                        <PetContainer token={this.state.token} loggedInUserId={this.state.loggedInUserId} bringDoggy={this.bringDoggy}/>
+                        <PetContainer token={this.state.token} 
+                                      loggedInUserId={this.state.loggedInUserId}
+                                      bringDoggy={this.bringDoggy}
+                                      adopted={this.state.adopted}/>
                         }
                     </>
                    :

@@ -55,7 +55,8 @@ class PetContainer extends Component {
          !this.state.onOff ? 
          <PetList pets={this.state.pets} handleClick={this.handleClick} /> :
 
-         <PetViewer  pet={this.state.pet} handleClick={this.handleRemove} bringDoggy={this.props.bringDoggy}/>
+         <PetViewer  pet={this.state.pet} handleClick={this.handleRemove} bringDoggy={this.props.bringDoggy}
+         adopted={this.props.adopted}/>
        }
        
        
