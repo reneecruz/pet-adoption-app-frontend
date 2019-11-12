@@ -48,28 +48,7 @@ class Home extends React.Component {
     }
 
 
-    bringDoggy = (petItem) => {
-        // console.log("bring doggy", petItem)
-        this.setState({
-        pet: petItem,
-        adopted: true
-         
-        })
-        fetch("http://localhost:3000/adoptions", {
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json",
-            "Authorization": this.state.token
-        },
-        body: JSON.stringify({
-            user_id: this.state.loggedInUserId,
-            pet_id: petItem.id
-        })
-        })
-        .then(res => res.json())
-      
-    }
+    
 
 
     render() {

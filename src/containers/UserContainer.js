@@ -28,10 +28,6 @@ componentDidMount(){
   this.fetchUser()
 }
 
-
-
-
-
  render() {
 
   return(

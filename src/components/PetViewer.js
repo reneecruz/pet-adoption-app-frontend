@@ -9,7 +9,7 @@ class PetViewer extends Component {
   return(
    <div>
      <button onClick={this.props.handleClick}>Back</button>
-    <PetCard pet={this.props.pet} handleClick={this.props.handleClick} bringDoggy={this.props.bringDoggy}/>
+    <PetCard pet={this.props.pet} handleClick={this.props.handleClick} adoptDoggy={this.props.adoptDoggy}/>
    </div>
     )
    }
