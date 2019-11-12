@@ -42,7 +42,7 @@ componentDidMount(){
                     logOut={this.props.logOut}
                     fetchUser={this.fetchUser}/>
        <AdoptionContainer token={this.props.token}
-                          user={this.state.user}
+                          adoptions={this.state.user.adoptions}
                           />
    </div>
     )
