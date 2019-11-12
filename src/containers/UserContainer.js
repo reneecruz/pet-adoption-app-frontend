@@ -9,8 +9,9 @@ state = {
 }
 
 fetchUser = ()=>{
-    const {userId, token} = this.props 
-    fetch(`http://localhost:3000/users/${userId}`, {
+    const id = localStorage.loggedInUserId
+    const token = localStorage.token
+    fetch(`http://localhost:3000/users/${id}`, {
       headers: {
         "Authorization": token
       }
@@ -19,7 +20,6 @@ fetchUser = ()=>{
     .then(userData => {
       this.setState({
         user: userData
-        
       })
     })
 }

@@ -5,7 +5,6 @@ import { withRouter } from 'react-router-dom';
 class LogIn extends React.Component {
 
     state = {
-        logIn: false,
         username: '',
         password: '',
         name: '',
@@ -14,8 +13,55 @@ class LogIn extends React.Component {
         errors: []
     }
 
+    
+
+    logInForm = ()=>{
+        return (<form onChange={this.handleOnChange} className="login-form">
+            <label htmlFor="username" className="name-input">User Name:</label>
+            <input type="text" id='username'name="username" placeholder="write your username"/>
+
+            <label htmlFor="password" className="password">Password:</label>
+            <input type="password" id='password' name="password" placeholder="write your password"/>
+
+            <input type="submit" onClick={this.logInSubmitted}/>
+       </form>)
+    }
+
+    signUpForm = ()=>{
+       return (<form onChange={this.handleOnChange} className="sign-up-form">
+            <label htmlFor="name" className="name-input">Name:</label>
+            <input type="text" id='name' name="name" placeholder="write your name"/>
+
+            <label htmlFor="location" className="location"> Location:</label>
+            <input type="text" id='location' name="location" placeholder="write your location"/>
+
+            <label htmlFor="gender" className="select">Gender:</label>
+            <select name="gender" className="select" >
+                <option  className="option" value="default">Your prefered gender</option>
+                <option className="option" value="Female">
+                    Female
+                </option>
+                <option className="option" value="Male">
+                    Male
+                </option>
+                <option className="option" value="Prefered not to say">
+                    Prefered not to say
+                </option>
+            </select>
+
+            <label htmlFor="username" className="username">User Name:</label>
+            <input type="text" id='username' name="username" className="username-input"placeholder="write your username"/>
+
+            <label htmlFor="password" className="password">Password:</label>
+            <input type="password" id='password' className="password-input" name="password" placeholder="write your password"/>
+
+            <input type="submit" onClick={this.signUpSubmitted} />
+
+        </form> )
+    }
+
     handleOnChange = (event) => {
-        console.log(event.target.name, event.target.value)
+        // console.log(event.target.name, event.target.value)
         this.setState({
         [event.target.name]: event.target.value
         })
@@ -23,11 +69,11 @@ class LogIn extends React.Component {
 
     logInSubmitted = (event) => {
         event.preventDefault()
-        console.log("derya is life")
+        // console.log("derya is life")
         fetch("http://localhost:3000/login", {
             method: 'POST',
             headers: {
-                "Content-Type": "application/json",
+               "Content-Type": "application/json",
                "Accept": "application/json"
            },
            body: JSON.stringify(
@@ -54,11 +100,10 @@ class LogIn extends React.Component {
        })
     //    this.props.history.push('/')
     }
-       // .then(console.log)
 
     signUpSubmitted = (event) => {
         event.preventDefault()
-        console.log("derya is life")
+        // console.log("derya is life")
         fetch("http://localhost:3000/users", {
             method: 'POST',
             headers: {
@@ -100,48 +145,10 @@ class LogIn extends React.Component {
                 </ul>
                
                {
-                   this.props.renderProps.location.pathname === '/'  ?
-                   <form onChange={this.handleOnChange} className="login-form">
-                    <label htmlFor="username" className="name-input">User Name:</label>
-                    <input type="text" id='username'name="username" placeholder="write your username"/>
-
-                    <label htmlFor="password" className="password">Password:</label>
-                    <input type="password" id='password' name="password" placeholder="write your password"/>
-
-                    <input type="submit" onClick={this.logInSubmitted}/>
-                </form>
-                        : 
-                   <form onChange={this.handleOnChange} className="sign-up-form">
-                    <label htmlFor="name" className="name-input">Name:</label>
-                    <input type="text" id='name' name="name" placeholder="write your name"/>
-
-                    <label htmlFor="location" className="location"> Location:</label>
-                    <input type="text" id='location' name="location" placeholder="write your location"/>
-
-                    <label htmlFor="gender" className="select">Gender:</label>
-                        <select name="gender" className="select" >
-                            <option  className="option" value="default">Your prefered gender</option>
-                            <option className="option" value="Female">
-                            Female
-                            </option>
-                            <option className="option" value="Male">
-                            Male
-                            </option>
-                            <option className="option" value="Prefered not to say">
-                               Prefered not to say
-                            </option>
-                        </select>
-
-                    <label htmlFor="username" className="username">User Name:</label>
-                    <input type="text" id='username' name="username" className="username-input"placeholder="write your username"/>
-
-                    <label htmlFor="password" className="password">Password:</label>
-                    <input type="password" id='password' className="password-input" name="password" placeholder="write your password"/>
-
-                    <input type="submit" onClick={this.signUpSubmitted} />
-
-              </form> 
-             }
+                   this.props.renderProps.location.pathname === '/'  ? this.logInForm()
+                  : 
+                   this.signUpForm()
+               }
             </div>
             
         )
