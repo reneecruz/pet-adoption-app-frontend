@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import AdoptionItem from './AdoptionItem'
+// import AdoptionItem from './AdoptionItem'
 
 class AdoptionList extends Component {
  
