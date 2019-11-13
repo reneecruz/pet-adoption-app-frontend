@@ -4,9 +4,6 @@ import PetItem from './PetItem'
 const PetList = (props) => {
 
   return(
-  <>  
-     <label>Find Pet By Name</label>
-     <input value={props.inputValue} onChange={props.petFilterOnChange}></input>
 
      <div className="dog-list">
         {
