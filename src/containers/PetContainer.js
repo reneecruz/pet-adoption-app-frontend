@@ -67,9 +67,6 @@ adoptDoggy = (petItem) => {
 
 }
 
-
-  
- 
  render() {
   // console.log(this.state.isPetViewOn)
   // console.log(this.state.pets)
