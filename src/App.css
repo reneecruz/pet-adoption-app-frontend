@@ -134,6 +134,7 @@
   width: 30%;
   height: 50%;
   margin: 5% 2%;
+  font-size: 20px;
 }
 
 .profile-info{
@@ -235,7 +236,7 @@
 }
 
 .tooltip .tooltiptext {
-  visibility: hidden;
+  visibility: hidden ;
   width: 120px;
   background-color: black;
   color: #fff;
@@ -250,4 +251,20 @@
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
+}
+
+.profile-edit-button{
+ display: block;
+ margin: 10px auto;
+ width: 158px;
+ height: 28px;
+ padding: 5px;
+ 
+}
+
+.delete-button{
+  display: block;
+  height: 20px;
+  width: 140px;
+  padding-top: 5px;
 }

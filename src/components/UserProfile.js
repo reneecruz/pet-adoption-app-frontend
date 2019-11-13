@@ -67,12 +67,12 @@ class UserProfile extends Component {
     } else if( this.props.user.gender === "Male"){
       
        return <img className="profile-img" 
-        src="https://i7.pngguru.com/preview/136/22/549/user-profile-computer-icons-girl-customer-avatar-thumbnail.jpg"
+        src="https://cdn0.iconfinder.com/data/icons/finance-1-8/151/25-512.png"
          alt={this.props.user.name}/> 
       
     } else  if (this.props.user.gender === "Prefered not to say"){
      return  <img className="profile-img" 
-        src="https://i-love-png.com/images/user_png_1449302.png"
+        src="https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
          alt={this.props.user.name}/> 
     } else {
       return  <img className="profile-img" 
@@ -128,29 +128,30 @@ class UserProfile extends Component {
           </h2>
 
           <p> 
-            <b>Location:</b> 
+            <b className="bold">Location:</b> 
             {this.props.user.location}
           </p>
         
           <p> 
-            <b>Username:</b> 
+            <b className="bold">Username:</b> 
             {this.props.user.username}
           </p>
     
           <p> 
-            <b>Gender:</b> 
+            <b className="bold">Gender:</b> 
             {this.props.user.gender}
           </p>
 
-          <button onClick={this.handleEditButton}>
+          <button onClick={this.handleEditButton} className="profile-edit-button">
             { this.state.isEditFormOn?
               "Profile" : "Edit me"
             }
 
          </button>
-
-         <button className="tooltip" onClick={this.handleDelete}>
-            Delete your account
+        
+         <button className="tooltip" onClick={this.handleDelete} >
+            <span className="delete-button">Delete your account</span> 
+          
             <span className="tooltiptext">Are your sure that you wanna leave puppies alone? 🐶</span>
           </button>
           </div>
