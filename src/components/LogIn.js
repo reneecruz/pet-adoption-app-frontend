@@ -145,7 +145,9 @@ class LogIn extends React.Component {
                 </ul>
                
                {
-                   this.props.renderProps.location.pathname === '/'  ? this.logInForm()
+                   this.props.renderProps.location.pathname === '/'  ? 
+                   
+                   this.logInForm()
                   : 
                    this.signUpForm()
                }

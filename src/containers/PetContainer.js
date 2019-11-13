@@ -115,21 +115,15 @@ adoptDoggy = (petItem) => {
 }
 
  render() {
-  // console.log(this.state.isPetViewOn)
-  // console.log(this.state.pets)
-  // console.log(this.state.pet)
-  // console.log(this.state.sortValue)
 
   const filteredPets = 
     this.state.pets.filter(pet => {
       return pet.name.toLowerCase().includes(this.state.inputValue.toLowerCase())
     }) 
   
-  // console.log(filteredPets())
 
   return(
    <div className="pet-container">
-
   
       <label>Sort Pets</label>
       
