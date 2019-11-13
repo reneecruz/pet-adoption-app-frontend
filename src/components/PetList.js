@@ -6,6 +6,10 @@ class PetList extends Component {
  render() {
   //  console.log(this.props.pets)
   return(
+  <>
+   <label>Find Pet By Name</label>
+   <input value={this.props.inputValue} onChange={this.props.petFilterOnChange}></input>
+
    <div className="dog-list">
        {
          this.props.pets.map(pet => {
@@ -14,6 +18,7 @@ class PetList extends Component {
        }
        
    </div>
+  </>
     )
    }
  }

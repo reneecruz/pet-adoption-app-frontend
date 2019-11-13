@@ -4,7 +4,7 @@ import  AdoptionList from '../components/AdoptionList'
 class AdoptionContainer extends Component {
     
  render() {
-   console.log(this.props.adoptions)
+  //  console.log(this.props.adoptions)
   return(
    <div>
        <h2>My Adoptions:</h2>
