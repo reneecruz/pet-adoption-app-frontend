@@ -122,24 +122,39 @@ class UserProfile extends Component {
   profile = ()=>{
     return (<div className="profile-div">
          {this.renderGenderPhoto()}
-         <h2>
-           {this.props.user.name}
-         </h2>
+         <div className="profile-info">
+          <h2>
+            {this.props.user.name}
+          </h2>
 
-         <p> 
-           <b>Location:</b> 
-           {this.props.user.location}
-         </p>
-      
-         <p> 
-           <b>Username:</b> 
-           {this.props.user.username}
-         </p>
-  
-         <p> 
-           <b>Gender:</b> 
-           {this.props.user.gender}
-         </p>
+          <p> 
+            <b>Location:</b> 
+            {this.props.user.location}
+          </p>
+        
+          <p> 
+            <b>Username:</b> 
+            {this.props.user.username}
+          </p>
+    
+          <p> 
+            <b>Gender:</b> 
+            {this.props.user.gender}
+          </p>
+
+          <button onClick={this.handleEditButton}>
+            { this.state.isEditFormOn?
+              "Profile" : "Edit me"
+            }
+
+         </button>
+
+         <button className="tooltip" onClick={this.handleDelete}>
+            Delete your account
+            <span className="tooltiptext">Are your sure that you wanna leave puppies alone? 🐶</span>
+          </button>
+          </div>
+          
       </div>)
   }
  
@@ -155,19 +170,6 @@ class UserProfile extends Component {
            :
           this.profile()
        }
-  
-         <button onClick={this.handleEditButton}>
-            { this.state.isEditFormOn?
-              "Profile" : "Edit me"
-            }
-
-         </button>
-
-         <button className="tooltip" onClick={this.handleDelete}>
-            Delete your account
-            <span className="tooltiptext">Are your sure that you wanna leave puppies alone? 🐶</span>
-          </button>
-
      </div>
       )
      } else

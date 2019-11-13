@@ -6,8 +6,8 @@ class AdoptionContainer extends Component {
  render() {
    console.log(this.props.adoptions)
   return(
-   <div  className="adoption-container">
-      <h2>My Adoptions:</h2>
+   <div>
+       <h2>My Adoptions:</h2>
        {this.props.adoptions && this.props.adoptions.length > 0 ? 
         this.props.adoptions.map(adoption => {
           return <AdoptionList adoption={adoption} key={adoption.id}/>
