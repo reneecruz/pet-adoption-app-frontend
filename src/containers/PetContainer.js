@@ -120,11 +120,10 @@ adoptDoggy = (petItem) => {
   // console.log(this.state.pet)
   // console.log(this.state.sortValue)
 
-  const filteredPets = () => {
-    return this.state.pets.filter(pet => {
+  const filteredPets = 
+    this.state.pets.filter(pet => {
       return pet.name.toLowerCase().includes(this.state.inputValue.toLowerCase())
     }) 
-  }
   
   // console.log(filteredPets())
 
@@ -146,7 +145,7 @@ adoptDoggy = (petItem) => {
                      handlePetGoBack={this.handlePetGoBack} 
                      adoptDoggy={this.adoptDoggy}/> 
                      :
-         <PetList pets={this.sortPets(filteredPets())} 
+         <PetList pets={this.sortPets(filteredPets)} 
                   handlePetView={this.handlePetView}
                   petFilterOnChange={this.petFilterOnChange}
                   inputValue={this.state.inputValue} /> 
