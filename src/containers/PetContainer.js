@@ -6,7 +6,7 @@ class PetContainer extends Component {
  state = {
    pets: [],
    pet: {},
-   onOff: false
+   isPetViewOn: false
  }
  
  componentDidMount(){
@@ -20,26 +20,25 @@ class PetContainer extends Component {
    })
  }
 
- handleClick = (petItem) => {
+ handlePetView= (petItem) => {
   //  console.log("click", petItem)
    this.setState({
      pet: petItem,
-     onOff: !this.state.onOff
+     isPetViewOn: !this.state.isPetViewOn
    })
  }
 
-// handleBackButton = () => {
-//   console.log("back button")
-//   this.setState({
-    
-//   })
-// }
+ handlePetGoBack = ()=>{
+  this.setState({
+    pet: {},
+    isPetViewOn: false
+  })
+ }
 
 adoptDoggy = (petItem) => {
   // console.log("bring doggy", petItem)
   this.setState({
-  pet: petItem,
-  adopted: true
+  pet: petItem
    
   })
   fetch("http://localhost:3000/adoptions", {
@@ -55,45 +54,39 @@ adoptDoggy = (petItem) => {
   })
   })
   .then(res => res.json())
-  .then(adoptionData => {
-    // console.log(adoptionData)
+  .then(adoptedDoggy => {
+    // console.log(adoptedDoggy)
     const updatedPets = this.state.pets.map(pet => {
-      return pet.id === adoptionData.id ? adoptionData : pet
+      return pet.id === adoptedDoggy.id ? adoptedDoggy : pet
     })
     this.setState({
       pets: updatedPets,
-      pet: adoptionData
+      pet: adoptedDoggy
     })
   })
 
 }
 
 
- handleRemove = ()=>{
-  this.setState({
-    pet: {},
-    onOff: false
-  })
- }
   
  
  render() {
-  //  console.log(this.props.token)
-  // console.log(this.state.onOff)
+  // console.log(this.state.isPetViewOn)
   // console.log(this.state.pets)
   // console.log(this.state.pet)
+  
   return(
    <div className="pet-container">
        
        {
-         !this.state.onOff ? 
-         <PetList pets={this.state.pets} handleClick={this.handleClick} /> :
-
-         <PetViewer  pet={this.state.pet} handleClick={this.handleRemove} adoptDoggy={this.adoptDoggy}
-         adopted={this.props.adopted}/>
-       }
-       
-       
+         this.state.isPetViewOn ? 
+         <PetViewer  pet={this.state.pet} 
+                     handlePetGoBack={this.handlePetGoBack} 
+                     adoptDoggy={this.adoptDoggy}/> 
+                     :
+         <PetList pets={this.state.pets} 
+                  handlePetView={this.handlePetView} /> 
+       }  
    </div>
     )
    }

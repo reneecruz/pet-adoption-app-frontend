@@ -9,7 +9,7 @@ class PetList extends Component {
    <div className="dog-list">
        {
          this.props.pets.map(pet => {
-           return <PetItem pet={pet} key={pet.id} handleClick={this.props.handleClick}/>
+           return <PetItem pet={pet} key={pet.id} handlePetView={this.props.handlePetView}/>
          })
        }
        

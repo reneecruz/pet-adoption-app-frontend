@@ -51,7 +51,6 @@ class UserProfile extends Component {
     })
     .then(res => res.json())
     .then(() => {
-      // console.log(updatedUser)
       this.setState({
            isEditFormOn: false
         }, this.props.fetchUser())
