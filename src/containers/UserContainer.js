@@ -32,11 +32,16 @@ componentDidMount(){
 
   return(
    <div className='user-container'>
-       <UserProfile user={this.state.user}
+     <div className="profile-container">
+     <UserProfile user={this.state.user}
                     logOut={this.props.logOut}
                     fetchUser={this.fetchUser}/>
-       <AdoptionContainer adoptions={this.state.user.adoptions}
-                          />
+     </div>
+      <div className="adoption-container">
+      <AdoptionContainer 
+      adoptions={this.state.user.adoptions}/>
+      
+      </div>
    </div>
     )
    }

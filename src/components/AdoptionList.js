@@ -6,7 +6,8 @@ class AdoptionList extends Component {
  render() {
   //  console.log(this.props.adoption)
   return(
-   <div className="adoption-container">
+   <div>
+    
      <div className="adoption-item">
        <div className="adoption-img-container">
        <img className="adoption-img"src={this.props.adoption.pet.img}/>
