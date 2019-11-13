@@ -8,7 +8,8 @@ class PetContainer extends Component {
    pets: [],
    pet: {},
    isPetViewOn: false,
-   sortValue: ''
+   sortValue: '',
+   inputValue: '',
  }
  
  componentDidMount(){
@@ -20,6 +21,14 @@ class PetContainer extends Component {
       pets: petsData
     })
    })
+ }
+
+ petFilterOnChange = (event) => {
+   console.log("hi from onChange", event.target.value)
+   this.setState({
+     inputValue: event.target.value
+   })
+
  }
 
  handleSortPets = (event) => {
@@ -109,8 +118,15 @@ adoptDoggy = (petItem) => {
   // console.log(this.state.isPetViewOn)
   // console.log(this.state.pets)
   // console.log(this.state.pet)
-  console.log(this.state.sortValue)
+  // console.log(this.state.sortValue)
+
+  const filteredPets = 
+    this.state.pets.filter(pet => {
+      return pet.name.toLowerCase().includes(this.state.inputValue.toLowerCase())
+    }) 
   
+  // console.log(filteredPets())
+
   return(
    <div className="pet-container">
 
@@ -129,8 +145,10 @@ adoptDoggy = (petItem) => {
                      handlePetGoBack={this.handlePetGoBack} 
                      adoptDoggy={this.adoptDoggy}/> 
                      :
-         <PetList pets={this.sortPets(this.state.pets)} 
-                  handlePetView={this.handlePetView} /> 
+         <PetList pets={this.sortPets(filteredPets)} 
+                  handlePetView={this.handlePetView}
+                  petFilterOnChange={this.petFilterOnChange}
+                  inputValue={this.state.inputValue} /> 
        }  
    </div>
     )
