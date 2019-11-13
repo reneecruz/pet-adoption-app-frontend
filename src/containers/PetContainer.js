@@ -3,10 +3,12 @@ import PetList from '../components/PetList'
 import PetViewer from '../components/PetViewer'
 
 class PetContainer extends Component {
+
  state = {
    pets: [],
    pet: {},
-   isPetViewOn: false
+   isPetViewOn: false,
+   sortValue: ''
  }
  
  componentDidMount(){
@@ -18,6 +20,42 @@ class PetContainer extends Component {
       pets: petsData
     })
    })
+ }
+
+ handleSortPets = (event) => {
+  //  console.log("sort button", this.state.sortValue)
+   this.setState({
+     sortValue: event.target.value
+   })
+ }
+
+ sortPets = (pets) => {
+   if(this.state.sortValue === "Name") {
+     return [...pets].sort((a,b) => {
+       if(a.name > b.name) {
+         return 1
+       }else if (a.name < b.name) {
+         return -1
+       }else {
+         return 0
+       }
+     })
+   }
+   else if(this.state.sortValue === "Breed") {
+    return [...pets].sort((a,b) => {
+      if(a.breed > b.breed) {
+        return 1
+      }else if (a.breed < b.breed) {
+        return -1
+      }else {
+        return 0
+      }
+    })
+  }
+  else {
+    return pets
+  }
+
  }
 
  handlePetView= (petItem) => {
@@ -71,17 +109,27 @@ adoptDoggy = (petItem) => {
   // console.log(this.state.isPetViewOn)
   // console.log(this.state.pets)
   // console.log(this.state.pet)
+  console.log(this.state.sortValue)
   
   return(
    <div className="pet-container">
-       
+
+  
+      <label>Sort Pets</label>
+      
+      <select name="sortValue" onChange={this.handleSortPets}>
+        <option value="All">All</option>
+        <option value="Name">Name</option>
+        <option value="Breed">Breed</option>
+      </select>
+ 
        {
          this.state.isPetViewOn ? 
          <PetViewer  pet={this.state.pet} 
                      handlePetGoBack={this.handlePetGoBack} 
                      adoptDoggy={this.adoptDoggy}/> 
                      :
-         <PetList pets={this.state.pets} 
+         <PetList pets={this.sortPets(this.state.pets)} 
                   handlePetView={this.handlePetView} /> 
        }  
    </div>
