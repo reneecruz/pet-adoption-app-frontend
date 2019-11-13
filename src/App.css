@@ -45,14 +45,12 @@
   border-radius: 15px;
   height: 100vh;
   width: 95%;
- background-image: url("https://image.cnbcfm.com/api/v1/image/105992231-1561667465295gettyimages-521697453.jpeg?v=1561667497");
- background-position: top;
- background-size:  100%;
- background-repeat: no-repeat;
- background-origin: padding-box;
- padding: 30px;
-
- 
+  background-image: url("https://image.cnbcfm.com/api/v1/image/105992231-1561667465295gettyimages-521697453.jpeg?v=1561667497");
+  background-position: top;
+  background-size:  100%;
+  background-repeat: no-repeat;
+  background-origin: padding-box;
+  padding: 30px;
 }
 
 .home ul li{
@@ -73,23 +71,16 @@
   float: right;
 }
 
-
-
 .pet-container{
-  height: auto;
+  height: 100vh;
   overflow: auto;
-  background-color:rgba(78,187,123, 0.8)
   
 }
-
-
 
 .user-container{
   /* border: 1px solid black; */
   height: auto; 
-
 }
-
 
 .login-form, .sign-up-form{
   box-shadow: 3px 3px 5px 6px #ccc;
@@ -131,7 +122,6 @@
   height: 50%;
   margin: 5% 2%;
   font-size: 20px;
-  
 }
 
 .profile-info{
@@ -139,7 +129,6 @@
   border-radius: 45px;
   margin: 15px;
   padding-bottom: 25px;
-
 }
 
 .clear{
@@ -178,10 +167,11 @@
   border-radius: 15px;
   margin-top: 8%;
 }
+
 .adoption-img-container{
+ overflow: hidden;
  height: 30vh;
 }
-
 
 .adoption-img{
   width: 100%;
@@ -189,13 +179,11 @@
 }
 
 .adoption-item{
-  box-shadow: 3px 3px 5px 6px rgba(32,107,18, 0.5);
-  border-radius: 15px;
-  display: block;
-  float: left;
-  margin: 15px;
-  width: 20%;
-  height: auto;
+ width: 30%;
+ float: left;
+ margin: 20px;
+ box-shadow: 3px 3px 5px 6px #ccc;
+ border-radius: 15px;
 }
 
 .login-form input[type="text"], input[type="password"], 
