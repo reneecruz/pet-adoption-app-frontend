@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { NavLink  } from 'react-router-dom';
 
-class NavBar extends Component {
+const NavBar = () => {
 
-renderButtons = () => {
+const renderButtons = () => {
     if (localStorage.token) {
      return <NavLink className="nav-link" to='/'>Home</NavLink>   
     }else {
@@ -15,25 +15,20 @@ renderButtons = () => {
       )
     }
   }
-
-  render() {
       return (
             
         <div className="App">
-    
           <header className="header"> 
-            <h1>
-              DoggoDoption
-            </h1>
-            <div className="clear"></div>
-            <div className="nav-bar">
-                {this.renderButtons()}  
-            </div>
-              
+              <h1>
+                DoggoDoption
+              </h1>
+              <div className="clear"></div>
+              <div className="nav-bar">
+                  {renderButtons()}  
+               </div>
           </header>
-          </div>
+        </div>
       )
   }
-}
 
 export default NavBar

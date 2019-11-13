@@ -120,26 +120,28 @@ class UserProfile extends Component {
   }
 
   profile = ()=>{
+
+    const { name, location, username, gender} = this.props.user
     return (<div className="profile-div">
          {this.renderGenderPhoto()}
          <div className="profile-info">
           <h2>
-            {this.props.user.name}
+            {name}
           </h2>
 
           <p> 
             <b className="bold">Location:</b> 
-            {this.props.user.location}
+            {location}
           </p>
         
           <p> 
             <b className="bold">Username:</b> 
-            {this.props.user.username}
+            {username}
           </p>
     
           <p> 
             <b className="bold">Gender:</b> 
-            {this.props.user.gender}
+            {gender}
           </p>
 
           <button onClick={this.handleEditButton} className="profile-edit-button">
@@ -160,8 +162,7 @@ class UserProfile extends Component {
   }
  
  render() {
-  // console.log(this.renderGenderPhoto())
-  // console.log(this.props.user)
+
 
   if (this.props.user.id){
     return(
