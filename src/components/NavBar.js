@@ -5,12 +5,16 @@ const NavBar = () => {
 
 const renderButtons = () => {
     if (localStorage.token) {
-     return <NavLink className="nav-link" to='/'>Home</NavLink>   
+     return<>
+     <NavLink className="nav-link" to='/'>Home</NavLink>
+     {/* <NavLink className="nav-link" to="/Profile">Profile</NavLink>    */}
+     </>
     }else {
       return (
         <>
         <NavLink className="nav-link" to='/'>Home</NavLink>
         <NavLink className="nav-link" to='/signup'>Sign Up</NavLink>
+        
         </>
       )
     }
