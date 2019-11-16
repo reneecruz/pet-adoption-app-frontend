@@ -164,7 +164,7 @@ class UserProfile extends Component {
  render() {
 
 
-  if (this.props.user.id){
+  if (localStorage.loggedInUserId){
     return(
       <div className="profile-item">
        { this.state.isEditFormOn ? 
