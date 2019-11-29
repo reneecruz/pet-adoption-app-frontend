@@ -11,7 +11,6 @@ class UserProfile extends Component {
     gender: ""
     
  }
- 
 
   handleEditButton = ()=>{
     this.setState({

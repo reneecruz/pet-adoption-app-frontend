@@ -1,5 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import Profile from './UserProfile'
+import UserProfile from './UserProfile';
 
 
 class LogIn extends React.Component {
@@ -123,11 +125,12 @@ class LogIn extends React.Component {
        .then(res => res.json())
        .then(data => {
            if (data.errors) {
-               this.setState({
-                   errors: data.errors
-               })
+            this.setState({
+                errors: data.errors
+            })
            }else{
-               this.props.setToken(data.token, data.user_id)
+            this.props.setToken(data.token, data.user_id)
+        
            }
        })
        
@@ -135,14 +138,16 @@ class LogIn extends React.Component {
     
 
     render (){
-        // console.log(this.props.renderProps)
-        // console.log(this.props.renderProps.location.pathname === '/login')
+
         return(
             <div>
-
-                <ul>
-                    {this.state.errors.map(error => <li>{error}</li>)}
-                </ul>
+      { this.state.errors && this.state.errors.length > 0 ?
+      
+           <ul>
+      {this.state.errors.map(error => <li>{error}</li>)}
+          </ul> : null
+    }
+               
                
                {
                    this.props.renderProps.location.pathname === '/'  ? 
@@ -150,7 +155,9 @@ class LogIn extends React.Component {
                    this.logInForm()
                   : 
                    this.signUpForm()
-               }
+               }  
+
+               
             </div>
             
         )
