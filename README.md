@@ -2,6 +2,8 @@
 
 # Search Bar 
 
+![Small Shop Web App Login](ezgif.com-optimize.gif) 
+
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
