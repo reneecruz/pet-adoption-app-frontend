@@ -1,9 +1,21 @@
+# Doggo-Doption | Dog Adoption Pet Finder App 
+
 ## DEMO 
 
-# Search Bar 
+## Search Bar 
 
 ![Small Shop Web App Login](ezgif.com-optimize.gif) 
 
+** REACT JS Frontend 
+** React Router 
+** JWT Token Auth
+** BCrypt Auth 
+** Rails API Backend for user accounts and logic 
+  ** Here's the repo: https://github.com/reneecruz/pet-adoption-app-backend
+** Rest Client for External API to DOG CEO for dog data 
+** Implemented Faker Gem for Dog breeds, age data 
+** Custom Routes in Rails
+** Ruby logic in Backend to implement DOG CEO img data with Faker data and create database models for adoption and CRUD actions for user and adoptions
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
