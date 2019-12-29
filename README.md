@@ -1,7 +1,11 @@
 # Doggo-Doption | Dog Adoption Pet Finder App 
 
+
 * **REACT JS Frontend**
+* Here's the repo: https://github.com/reneecruz/pet-adoption-app-frontend
 * **React Router** 
+* **HTML** 
+* **CSS**
 * **JWT Token Auth**
 * **BCrypt Auth**
 * **Rails API Backend** for user accounts and logic 
