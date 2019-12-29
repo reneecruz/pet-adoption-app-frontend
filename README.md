@@ -12,12 +12,12 @@
   * Here's the repo: https://github.com/reneecruz/pet-adoption-app-backend
   * **Rest Client** for external API to DOG CEO for dog data 
   * Implemented Faker Gem for Dog breeds, age data 
-  * Ruby logic in Backend to implement DOG CEO img data with Faker data and create database models for adoption and CRUD actions for user and adoptions
+  * **Ruby** logic in **Ruby on Rails** Backend API to implement DOG CEO img data with Faker data and create database models for adoption and CRUD actions for user and adoptions
   * Custom Routes in Rails
 
 ## DEMO 
 
-## Search Bar 
+## Search Bar built in React JS
 
 ![Small Shop Web App Login](ezgif.com-optimize.gif) 
 
