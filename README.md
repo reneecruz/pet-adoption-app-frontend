@@ -1,4 +1,4 @@
-# Doggo-Doption | Dog Adoption Pet Finder App 
+# Doggo-Doption | Dog Adoption Pet Finder Web App 
 
 
 * **REACT JS Frontend**
