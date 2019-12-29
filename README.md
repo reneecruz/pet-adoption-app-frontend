@@ -5,7 +5,8 @@
 ## Search Bar 
 
 ![Small Shop Web App Login](ezgif.com-optimize.gif) 
-Checkout out my blogpost on Medium about how to implement this search bar in React:
+
+# Checkout out my blogpost on Medium about how to implement this search bar in React:
 https://medium.com/@reneecruz/search-bar-in-react-js-in-six-simple-steps-4849118b2134
 
 * **REACT JS Frontend**
