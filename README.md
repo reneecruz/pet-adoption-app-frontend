@@ -1,14 +1,5 @@
 # Doggo-Doption | Dog Adoption Pet Finder App 
 
-## DEMO 
-
-## Search Bar 
-
-![Small Shop Web App Login](ezgif.com-optimize.gif) 
-
-### Checkout out my blogpost on Medium about how to implement this search bar in React:
-https://medium.com/@reneecruz/search-bar-in-react-js-in-six-simple-steps-4849118b2134
-
 * **REACT JS Frontend**
 * **React Router** 
 * **JWT Token Auth**
@@ -19,6 +10,17 @@ https://medium.com/@reneecruz/search-bar-in-react-js-in-six-simple-steps-4849118
   * Implemented Faker Gem for Dog breeds, age data 
   * Ruby logic in Backend to implement DOG CEO img data with Faker data and create database models for adoption and CRUD actions for user and adoptions
   * Custom Routes in Rails
+
+## DEMO 
+
+## Search Bar 
+
+![Small Shop Web App Login](ezgif.com-optimize.gif) 
+
+### Checkout out my blogpost on Medium about how to implement this search bar in React:
+https://medium.com/@reneecruz/search-bar-in-react-js-in-six-simple-steps-4849118b2134
+
+
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
