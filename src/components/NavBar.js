@@ -24,7 +24,7 @@ const renderButtons = () => {
         <div className="App">
           <header className="header"> 
               <h1>
-                DoggoDoption
+                doggo-doption
               </h1>
               <div className="clear"></div>
               <div className="nav-bar">

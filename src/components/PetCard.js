@@ -18,7 +18,7 @@ const PetCard = (props) => {
      <div>
         {props.pet.adoption ? 
         `Im Adopted!! by ${props.pet.adoption.user.name}` : 
-        <button onClick={() => props.adoptDoggy(props.pet)}>
+        <button className="btn cta bg" onClick={() => props.adoptDoggy(props.pet)}>
           Adopt Me ❣️
         </button>}
       </div> 
